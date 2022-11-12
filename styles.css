@@ -1,12 +1,21 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
 
 
-
-body.site{
+.site{
     display:grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 6fr 1fr;
-    width: 100vw;
+    grid-template-rows: 1fr 7fr 1fr;
+    width: 100vw; 
     height: 100vh;
+    /* overflow-y: scroll;
+    overflow-x:visible; */
+
+
     /* margin:20px; padding:10px; border:solid 2px #000; */
     /* grid-template-areas:"headerBar headerBar headerBar headerBar" */
                         /* "sidebar main_con main_con main_con" */
@@ -14,58 +23,176 @@ body.site{
                         /* "footer footer footer footer"; */
 
 }
-.site > *{padding:20px; color:rgb(0, 0, 0); font-size:20px;font-family:garamond;}
-body.dark{
+
+.dark{
     background-color: rgb(90, 82, 72);
+    color:antiquewhite;
+}
+.site{
+    /* background-color: rgb(232, 219, 225); */
+    color:rgb(0, 0, 0); 
+    background-image: linear-gradient(#dc86c2,#f49f9f );
 }
 
-.site > .headerBar{
-    background-color: bisque;
-    grid-column: 1/5;
-    grid-row:1/2;
-
-
-    
+.site > *{
+    padding:10px; 
+    font-size:20px;
+    font-family:garamond;
 }
-.dark > .headerBar{
+
+
+.dark >.headerBar{
     background-color: rgb(161, 145, 125);
-    grid-column: 1/5;
+    color:antiquewhite;
+}
+.site > .headerBar{
+    background-color: rgba(255, 228, 196, 0.584);
+    grid-column: 1/6;
     grid-row:1/2;
-    
+    font-size:30px;
+}
+
+.site > .headerBar> a{
+    color: #000000;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.site > .headerBar > a:hover{
+    background-color: #dcb8b89d;
+    border-radius: 10%;
 }
 .sidebar{
-    background-color: antiquewhite;
+    background-color: rgba(255, 228, 196, 0.584);
     grid-column: 1/2;
-    grid-row:2/4;
+    grid-row:2/9;
+    position: relative;
 
 }
+
 .sidebar > div{
     grid-gap:1px;
     margin:0;
-    padding:20px;
-    border:solid 2px rgb(255, 255, 255); 
- 
+    padding:20px 25px;
+    /* border:solid 2px rgb(255, 255, 255);  */
+    border-bottom: solid 2px #dcb8b8;
+}
+
+.sidebar > div:nth-child(odd){
+    background-color: rgba(255, 228, 196, 0.612);
 }
 a:link, a:visited, a:hover,a:active { 
     text-decoration: none;
     color: black;
  }
 
-
-/* a:visited { text-decoration: none; }
-a:hover { text-decoration: none; }
-a:active { text-decoration: none; } */
-
-
 .main_con{
-    background-color: rgb(8, 96, 67);
-    grid-column: 2/5;
-    grid-row:2/4;
+    /* background-color: rgb(232, 219, 225); */
+    grid-column: 2/6;
+    grid-row:2/9;
+    overflow: scroll;
+    max-width:100%;
+    min-height: 100%;
+    /* margin-right: 0;
+    padding-right: 0%; */
 }
 
-.footer{
-    background-color: bisque;
-    grid-column: 1/5;
-    grid-row:4/5;
+.main_con .page {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    /* display:contents; */
+    /* width: 90vw; */
+    height: auto;
+    border: #000000 solid 4px;
+    padding: 5%;
+    margin: 0%;
     text-align: center;
+
+
+}
+
+#intro{
+    padding: 10%;
+    margin: auto;
+    text-align: center;
+    font-size: 150%;
+}
+
+.main_con .page .summery{
+    align-self: flex-start;
+}
+
+.main_con .page .pic-and-link> *{
+    padding: 5%; 
+    max-width:100%;
+    height:auto;
+
+} 
+.main_con .page .pictures-roll{
+    display:grid;
+    overflow: scroll;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: 40%;
+    width: 32vw;
+    border: 3px solid #a99090;
+    padding: 0%;
+    margin: 2%;
+}
+.main_con .page .pictures-roll > *{
+    width: 30vw;
+    height: auto;
+}
+
+.main_con .page .pictures-roll > *:hover{
+    width: 70vw;
+    height: fit-content;
+
+}
+
+.main_con .page .pic-and-link > a{
+    background-color: bisque;
+    box-shadow: 5px 5px 5px rgb(196, 172, 181);
+    padding: 1%;
+    border-radius: 20%;
+    color: #a99090;
+
+}
+#Feedback-Form{
+    display:grid;
+    /* grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto; */
+    margin: auto;
+    text-align:justify;
+    
+}
+/* #Feedback-Form > #personal-details, #Feedback{
+    display: flex;
+    justify-content: space-around;
+
+} */
+
+#personal-details, #Feedback {
+    
+    border: #000000 solid 4px;
+    padding: 5%;
+    margin: 2%;
+    align-items:stretch;
+
+}
+
+
+.footer{
+    background-color: rgba(255, 228, 196, 0.584);
+    grid-column: 1/6;
+    /* grid-row:9/10; */
+    grid-row: auto;
+    text-align: center;
+    font-size: 15px;
+    /* max-height: 100vh; */
+    bottom:0;
+    position: sticky;
+
+
 }
